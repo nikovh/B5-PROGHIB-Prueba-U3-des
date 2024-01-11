@@ -1,0 +1,54 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Destinos Vacacionales
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item [routerLink]="['/precio', d]" 
+              *ngFor="let d of destinos">  //revisar
+      <ion-img [src]="d.imagen" />
+      <ion-label>{{destino}}</ion-label>   //revisar
+      <ion-buttons slot="end">
+        <ion-button (click)="cambiarPrecio(c)">  //crear funciones
+          <ion-icon name="airplane" />
+        </ion-button>
+        <ion-button (click)="sacarFoto(c)">
+          <ion-icon name="camera" />
+        </ion-button>
+        <ion-button (click)="eliminar(c)">
+          <ion-icon name="trash" />
+        </ion-button>
+      </ion-buttons>
+    </ion-item>
+  </ion-list>
+
+
+  <ion-modal [isOpen]="modalCategoriasFavoritosAbierto"> //cambiar
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Seleccione la lista de favoritos</ion-title>
+          <ion-buttons slot="end">
+            <ion-button>Cancelar</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <ion-list>
+          <ion-item 
+            *ngFor="let cf of categoriasFavoritos"
+            (click)="guardarCoctelEnCategoria(cf)"
+            >
+            <ion-label>{{cf}}</ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+
+
+</ion-content>
