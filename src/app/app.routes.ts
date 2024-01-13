@@ -10,20 +10,4 @@ export const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full',
   },
-  {
-    path: 'precio',
-    loadComponent: () => import('./precio/precio.page').then( m => m.PrecioPage)
-  },
-  {
-    path: 'precio',
-    loadComponent: () => import('./modal/precio/precio.page').then( m => m.PrecioPage)
-  },
-  {
-    path: 'precio-precio',
-    loadComponent: () => import('./modal/precio-precio/precio-precio.page').then( m => m.PrecioPrecioPage)
-  },
-  {
-    path: 'precio',
-    loadComponent: () => import('./modal/precio/precio.page').then( m => m.PrecioPage)
-  },
 ];
